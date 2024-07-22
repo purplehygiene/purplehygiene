@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devansh Bhikhan</title>
+</head>
+<body>
+    <h1>Devansh Bhikhan's Portfolio</h1>
+    <h2>I am a web developer</h2>
+    <hr />
+    <h3><a href="./public/movie-ranking.html">Movie Ranking Project</a></h3>
+    <img src="./Movie ranking.png" alt="Movie Ranking">
+    <h3><a href="./public/birthday-invite.html">Birthday Invite Project</a></h3>
+    <img src="./Birthday invite.png" alt="Birthday invite">
+    <hr /> 
+    <h4><a href="./public/contact.html">Contact info</a></h4>
+    <h4><a href="./public/about.html">About me</a></h4>
+</body>
+</html>
