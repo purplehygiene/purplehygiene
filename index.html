@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Hygiene | Premium Cleaning Services in West Berkshire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6B46C1',
+                        secondary: '#9F7AEA',
+                        accent: '#805AD5',
+                        light: '#FAF5FF',
+                        dark: '#322659'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(107, 70, 193, 0.8), rgba(107, 70, 193, 0.8)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #9F7AEA;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="#" class="text-primary text-2xl font-bold flex items-center">
+                        <i class="fas fa-broom mr-2"></i>
+                        Purple Hygiene
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-dark hover:text-primary">Home</a>
+                    <a href="#services" class="nav-link text-dark hover:text-primary">Services</a>
+                    <a href="#about" class="nav-link text-dark hover:text-primary">About</a>
+                    <a href="#testimonials" class="nav-link text-dark hover:text-primary">Testimonials</a>
+                    <a href="#gallery" class="nav-link text-dark hover:text-primary">Gallery</a>
+                    <a href="#contact" class="nav-link text-dark hover:text-primary">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-dark focus:outline-none" id="menu-btn">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-dark hover:text-primary">Home</a>
+                    <a href="#services" class="text-dark hover:text-primary">Services</a>
+                    <a href="#about" class="text-dark hover:text-primary">About</a>
+                    <a href="#testimonials" class="text-dark hover:text-primary">Testimonials</a>
+                    <a href="#gallery" class="text-dark hover:text-primary">Gallery</a>
+                    <a href="#contact" class="text-dark hover:text-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Premium Hygiene Services in West Berkshire</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Serving Marlow, Reading, Maidenhead and surrounding areas with exceptional cleaning and hygiene solutions for homes and businesses.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-accent hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Get a Free Quote</a>
+                <a href="#services" class="bg-white hover:bg-gray-100 text-primary font-bold py-3 px-8 rounded-full transition duration-300">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Hygiene Services</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">We offer comprehensive cleaning and hygiene solutions tailored to your needs in West Berkshire.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-home text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Residential Hygiene</h3>
+                    <p class="text-gray-600 mb-4">Thorough cleaning of your home including dusting, vacuuming, mopping, bathroom sanitization, and kitchen deep cleaning.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Regular maintenance cleaning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Deep hygiene services</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Move-in/move-out cleaning</li>
+                    </ul>
+                    <a href="#contact" class="text-primary font-semibold hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-building text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Commercial Hygiene</h3>
+                    <p class="text-gray-600 mb-4">Professional cleaning services for offices, retail spaces, and other commercial properties in Reading and Maidenhead.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Daily office cleaning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Carpet and upholstery cleaning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Window cleaning services</li>
+                    </ul>
+                    <a href="#contact" class="text-primary font-semibold hover:underline">Learn more →</a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-broom text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-3">Specialty Hygiene</h3>
+                    <p class="text-gray-600 mb-4">Specialized cleaning services including post-construction cleanup, event cleaning, and more for Marlow and surrounding areas.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Post-construction cleanup</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Event venue cleaning</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Eco-friendly cleaning options</li>
+                    </ul>
+                    <a href="#contact" class="text-primary font-semibold hover:underline">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark mb-6">Why Choose Purple Hygiene?</h2>
+                    <p class="text-gray-600 mb-6">Founded in 2015, Purple Hygiene has been providing top-quality cleaning and hygiene services to West Berkshire residents and businesses. Our team of trained professionals is committed to delivering exceptional results with every service.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-primary rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Locally Owned & Operated</h4>
+                                <p class="text-gray-600">We're proud to serve our local communities in Marlow, Reading, and Maidenhead.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Fully Insured</h4>
+                                <p class="text-gray-600">Your property is protected with our comprehensive insurance coverage.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-primary rounded-full p-2 mr-4">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-dark mb-1">Eco-Friendly Products</h4>
+                                <p class="text-gray-600">We use environmentally friendly cleaning products that are safe for your family and pets.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="mt-8 inline-block bg-primary hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full transition duration-300">Contact Us Today</a>
+                </div>
+                
+                <div class="lg:w-1/2 relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1598528738936-c50861cc75a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cleaning team" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg mt-8">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cleaning supplies" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Office cleaning" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="rounded-xl overflow-hidden shadow-lg mt-8">
+                            <img src="https://images.unsplash.com/photo-1556741533-6e1823d96c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Happy customer" class="w-full h-64 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+                <p class="max-w-2xl mx-auto opacity-90">Hear from satisfied customers across West Berkshire</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"Purple Hygiene transformed my home in Marlow. After years of trying different services, I've finally found a team that pays attention to every detail. My house has never looked better!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-sm opacity-80">Marlow</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"As a busy professional in Reading, I don't have time to clean. Purple Hygiene handles my apartment perfectly every week. They're reliable, thorough, and use eco-friendly products which is important to me."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David P." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">David P.</h4>
+                            <p class="text-sm opacity-80">Reading</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="mb-6 italic">"We hired Purple Hygiene for our office in Maidenhead and couldn't be happier. They work around our schedule and leave our workspace spotless every day. Highly recommend their commercial services!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily R." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Emily R.</h4>
+                            <p class="text-sm opacity-80">Maidenhead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Our Work in West Berkshire</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">See the transformation we bring to homes and businesses across the region</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993af426f348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Clean kitchen" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-dark">Kitchen Deep Clean</h3>
+                        <p class="text-gray-600 text-sm">Marlow residence</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Clean bathroom" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-dark">Bathroom Sanitization</h3>
+                        <p class="text-gray-600 text-sm">Reading apartment</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 3 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Clean living room" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-dark">Living Room Refresh</h3>
+                        <p class="text-gray-600 text-sm">Maidenhead home</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Office cleaning" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-dark">Office Maintenance</h3>
+                        <p class="text-gray-600 text-sm">Reading business center</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1556741533-6e1823d96c79?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Window cleaning" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-dark">Window Cleaning</h3>
+                        <p class="text-gray-600 text-sm">Marlow residence</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Commercial cleaning" class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <h3 class="font-bold text-dark">Commercial Space</h3>
+                        <p class="text-gray-600 text-sm">Maidenhead office</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Areas Served Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4">Areas We Serve</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Providing premium hygiene services across West Berkshire</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-dark mb-2">Marlow</h3>
+                    <p class="text-gray-600">Residential & commercial hygiene</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-dark mb-2">Reading</h3>
+                    <p class="text-gray-600">Office & apartment hygiene</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-dark mb-2">Maidenhead</h3>
+                    <p class="text-gray-600">Home & business hygiene</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-dark mb-2">Surrounding Areas</h3>
+                    <p class="text-gray-600">Ask about service availability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-primary text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Get Your Free Quote Today</h2>
+                    <p class="mb-8 opacity-90">Fill out the form and we'll get back to you within 24 hours to discuss your hygiene needs in Marlow, Reading, Maidenhead or surrounding areas.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 rounded-full p-3 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Call Us</h4>
+                                <p class="opacity-90">0118 123 4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 rounded-full p-3 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email Us</h4>
+                                <p class="opacity-90">info@purplehygiene.co.uk</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-white bg-opacity-20 rounded-full p-3 mr-4">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Working Hours</h4>
+                                <p class="opacity-90">Monday - Friday: 8am - 6pm</p>
+                                <p class="opacity-90">Saturday: 9am - 2pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 font-medium">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70" placeholder="John Smith">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 font-medium">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70" placeholder="john@example.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block mb-2 font-medium">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70" placeholder="07123 456789">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block mb-2 font-medium">Service Needed</label>
+                            <select id="service" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70">
+                                <option value="">Select a service</option>
+                                <option value="residential">Residential Hygiene</option>
+                                <option value="commercial">Commercial Hygiene</option>
+                                <option value="specialty">Specialty Hygiene</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 placeholder-white placeholder-opacity-70" placeholder="Tell us about your hygiene needs..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-accent hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Request Free Quote</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-broom mr-2"></i>
+                        Purple Hygiene
+                    </h3>
+                    <p class="text-gray-400 mb-4">Premium hygiene services for West Berkshire homes and businesses.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Residential Hygiene</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Commercial Hygiene</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Deep Cleaning</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Move-In/Move-Out</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Specialty Hygiene</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>123 Clean Street, Reading, RG1 1AA</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>0118 123 4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>info@purplehygiene.co.uk</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Purple Hygiene. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your inquiry! We will contact you shortly.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
